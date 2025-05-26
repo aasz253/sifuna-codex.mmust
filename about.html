@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevTown - Join Our Tech Community</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #2c3e50;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: #3498db;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #3498db;
+        }
+
+        /* Auth Section */
+        .auth-section {
+            display: flex;
+            min-height: 100vh;
+            padding-top: 80px;
+        }
+
+        .auth-form-container {
+            flex: 1;
+            padding: 60px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .about-container {
+            flex: 1;
+            background: linear-gradient(135deg, #3498db, #2c3e50);
+            color: white;
+            padding: 60px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .auth-tabs {
+            display: flex;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .auth-tab {
+            padding: 12px 25px;
+            cursor: pointer;
+            font-weight: 500;
+            color: #7f8c8d;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .auth-tab.active {
+            color: #3498db;
+            border-bottom: 3px solid #3498db;
+        }
+
+        .auth-form {
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .form-title {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #2c3e50;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border 0.3s;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 100%;
+        }
+
+        .btn:hover {
+            background-color: #2980b9;
+        }
+
+        .auth-footer {
+            margin-top: 20px;
+            text-align: center;
+            color: #7f8c8d;
+        }
+
+        .auth-footer a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        /* About Section */
+        .about-title {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .about-moto {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            font-weight: 300;
+            line-height: 1.4;
+        }
+
+        .about-description {
+            margin-bottom: 30px;
+            line-height: 1.7;
+        }
+
+        .back-home {
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            border: 1px solid white;
+            padding: 10px 25px;
+            border-radius: 5px;
+            margin-top: 20px;
+            transition: all 0.3s;
+        }
+
+        .back-home:hover {
+            background-color: white;
+            color: #3498db;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .auth-section {
+                flex-direction: column;
+            }
+
+            .auth-form-container, .about-container {
+                padding: 40px 20px;
+            }
+
+            .auth-form {
+                max-width: 100%;
+            }
+
+            .nav-container {
+                flex-direction: column;
+            }
+
+            .logo {
+                margin-bottom: 15px;
+            }
+
+            .nav-links {
+                flex-direction: row;
+                align-items: center;
+            }
+
+            .nav-links li {
+                margin: 10px 0;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Sifuna<span>Codex <img src="anthony2.jpg"
+                 alt=""
+                   style="height: 40px; border-radius:50%;"></span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="COURSE.html">Courses</a></li>
+                <li><a href="EVENT.html">Events</a></li>
+                <li><a href="about.html">About Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Auth Section -->
+    <section class="auth-section">
+        <div class="auth-form-container">
+            <div class="container">
+                <div class="auth-tabs">
+                    <div class="auth-tab active" onclick="showLogin()">Login</div>
+                    <div class="auth-tab" onclick="showSignup()">Sign Up</div>
+                </div>
+
+                <div id="login-form">
+                    <h2 class="form-title">Welcome Back</h2>
+                    <form class="auth-form">
+                        <div class="form-group">
+                            <label for="login-email">Email</label>
+                            <input type="email" id="login-email" class="form-control" placeholder="Enter your email">
+                        </div>
+                        <div class="form-group">
+                            <label for="login-password">Password</label>
+                            <input type="password" id="login-password" class="form-control" placeholder="Enter your password">
+                        </div>
+                        <button type="submit" class="btn">Login</button>
+                    </form>
+                    <div class="auth-footer">
+                        Forgot password? <a href="index.html">Reset here</a>
+                    </div>
+                </div>
+
+                <div id="signup-form" style="display: none;">
+                    <h2 class="form-title">Join Sifuna Codex</h2>
+                    <form class="auth-form">
+                        <div class="form-group">
+                            <label for="signup-name">Full Name</label>
+                            <input type="text" id="signup-name" class="form-control" placeholder="Enter your full name">
+                        </div>
+                        <div class="form-group">
+                            <label for="signup-email">Email</label>
+                            <input type="email" id="signup-email" class="form-control" placeholder="Enter your email">
+                        </div>
+                        <div class="form-group">
+                            <label for="signup-password">Password</label>
+                            <input type="password" id="signup-password" class="form-control" placeholder="Create a password">
+                        </div>
+                        <div class="form-group">
+                            <label for="signup-confirm">Confirm Password</label>
+                            <input type="password" id="signup-confirm" class="form-control" placeholder="Confirm your password">
+                        </div>
+                        <button type="submit" class="btn">Create Account</button>
+                    </form>
+                    <div class="auth-footer">
+                        Already have an account? <a href="#" onclick="showLogin()">Login here</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="about-container">
+            <div class="container">
+                <h2 class="about-title">About Sifuna Codex</h2>
+                <p class="about-moto">"Improve. Empower. Transform."</p>
+                <p class="about-description">
+                    Sifuna Codex is Africa's fastest growing tech learning community, dedicated to unlocking elite tech skills with industry frontrunners. 
+                    We believe in the power of community-driven learning to shape the future of technology education.
+                </p>
+                <p class="about-description">
+                    Our mission is to bridge the gap between academic learning and industry requirements, providing hands-on experience and 
+                    real-world projects that prepare our students for global opportunities in the tech industry.
+                </p>
+                <a href="index.html" class="back-home">Back to Home</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Toggle between login and signup forms
+        function showLogin() {
+            document.getElementById('login-form').style.display = 'block';
+            document.getElementById('signup-form').style.display = 'none';
+            document.querySelectorAll('.auth-tab')[0].classList.add('active');
+            document.querySelectorAll('.auth-tab')[1].classList.remove('active');
+        }
+
+        function showSignup() {
+            document.getElementById('login-form').style.display = 'none';
+            document.getElementById('signup-form').style.display = 'block';
+            document.querySelectorAll('.auth-tab')[0].classList.remove('active');
+            document.querySelectorAll('.auth-tab')[1].classList.add('active');
+        }
+
+        // Form validation would go here in a real implementation
+        document.querySelectorAll('form').forEach(form => {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                // Form submission logic would go here
+                alert('Form submitted! (This is a demo)');
+            });
+        });
+    </script>
+</body>
+</html>
